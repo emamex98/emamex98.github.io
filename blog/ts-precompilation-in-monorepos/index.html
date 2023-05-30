@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta name="generator" content="Hugo 0.94.2" />
+    <title>
+
+
+        Emanuel Estrada's Blog
+
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="http://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+
+    <meta name="author" content="">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="alternate" type="application/rss&#43;xml" href="/es/index.xml" />
+
+    <meta itemprop="name" content="Emanuel Estrada">
+    <meta itemprop="description" content="">
+
+    <meta name="og:title" content="Emanuel Estrada">
+    <meta name="og:description" content="">
+    <meta name="og:type" content="article">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Emanuel Estrada">
+    <meta name="twitter:description" content="">
+
+    <meta name="article:author" content="">
+
+
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "http:\/\/ema.nuel.xyz\/es\/",
+    "name": "Emanuel Estrada",
+    "author": {
+        "@type": "Person",
+        "name": ""
+    },
+    "description": "",
+}
+</script>
+
+
+
+</head>
+
+<body class="clearfix">
+
+
+
+
+
+
+    <section id="sidebar" class="sidebar d-flex align-items-center p-5 green">
+        <div class="main-info">
+
+            <img src="/images/emamex.png" class="rounded-circle mb-3" width="160px">
+
+            <h1 class="heading">Emanuel's Blog</span></h1>
+            <p class="text-muted">Documenting my latest tech discoveries.</p>
+
+            <div class="social my-4">
+
+
+                <a target="_blank" href="http://github.com/emamex98" rel="me">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a target="_blank" href="http://linkedin.com/in/emamex98" rel="me">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+
+
+                <a target="_blank" href="mailto:em@nuel.xyz">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a target="_blank"
+                    href="http://drive.google.com/file/d/1mkwEbX4cWe1vnUfYgQoMJv6v8ktR7Mw4/view?usp=sharing">
+                    <i class="fas fa-file"></i>
+                </a>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="main-content">
+
+
+
+        <section id="skills">
+            <h6>
+                <a href="/blog/">
+                    < Return </a>
+            </h6>
+            <h2 class="heading">TS Precompilation in Monorepos</h2>
+            <p>
+                First of all, let's not forget that whenever we write code in TypeScript, that is not exactly what gets
+                executed at runtime in the browser. Instead, TypeScript code must first be compiled into
+                browser-readable, good-ol' Javascript.
+                With that in mind, TypeScript precompilation is the process of converting TypeScript code into
+                JavaScript code before it gets executed.
+            </p>
+            <h5>Should you implement it in monorepos?</h5>
+            <p>
+                Now, when it comes to monorepos, there are a number of benefits of TypeScript precompiling. First, it
+                can <strong>improve performance</strong> by
+                reducing the amount of work that needs to be done at runtime, in addition to <strong>improving code
+                    quality</strong> by
+                catching
+                errors during compilation.
+            </p>
+            <p>
+                However, there are a few things to keep in mind when precompiling TypeScript code in monorepos:
+
+            </p>
+            <ul>
+                <li>Since monorepos often contain many packages accross the project, it is important to make sure that
+                    all
+                    of them are using the <strong>same version of TypeScript</strong> to avoid conflicts.</li>
+                <li>Also, it is important to
+                    <strong>configure the compiler</strong> to produce the correct output format to prevent issues from
+                    making it to
+                    producction, and this
+                    can be achieved by <strong>testing the code</strong> in several ways, such as unit, integration and
+                    acceptance tests.
+                </li>
+            </ul>
+            <p>
+                Now again, no good thing can come with no downsides. Here are some of the downsides of precompiling
+                TypeScript in morepos, and how these can be addressed:
+            </p>
+            <ul>
+                <li>TypeScript code can <strong>increase the build time</strong> of a monorepo. This is because the
+                    TypeScript compiler needs to be run on
+                    all of the TypeScript code in the monorepo, but this can be addressed by <strong>using a cache to
+                        store
+                        precompiled code</strong> and only precompile it again if changes are detected.
+                </li>
+                <li>Precompiling TypeScript code can also <strong>increase the complexity of a monorepo</strong>. This
+                    is because it adds an
+                    additional step to the development process and requires developers to be familiar with the
+                    TypeScript compiler. However, <strong>using a text editor or IDE that supports TypeScript</strong>
+                    can help to make it easier
+                    to write TypeScript code and catch errors during development.</li>
+            </ul>
+
+        </section>
+
+    </div>
+
+    <div style="z-index: 4; position: relative;">
+
+
+    </div>
+
+    <script src="http://blog.uicard.io/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<script>hljs.highlightAll();</script>
+
+</html>

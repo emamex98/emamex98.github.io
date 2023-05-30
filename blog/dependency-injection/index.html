@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta name="generator" content="Hugo 0.94.2" />
+    <title>
+
+
+        Emanuel Estrada's Blog
+
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="http://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+
+    <meta name="author" content="">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="alternate" type="application/rss&#43;xml" href="/es/index.xml" />
+
+    <meta itemprop="name" content="Emanuel Estrada">
+    <meta itemprop="description" content="">
+
+    <meta name="og:title" content="Emanuel Estrada">
+    <meta name="og:description" content="">
+    <meta name="og:type" content="article">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Emanuel Estrada">
+    <meta name="twitter:description" content="">
+
+    <meta name="article:author" content="">
+
+
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "http:\/\/ema.nuel.xyz\/es\/",
+    "name": "Emanuel Estrada",
+    "author": {
+        "@type": "Person",
+        "name": ""
+    },
+    "description": "",
+}
+</script>
+
+
+
+</head>
+
+<body class="clearfix">
+
+
+
+
+
+
+    <section id="sidebar" class="sidebar d-flex align-items-center p-5 green">
+        <div class="main-info">
+
+            <img src="/images/emamex.png" class="rounded-circle mb-3" width="160px">
+
+            <h1 class="heading">Emanuel's Blog</span></h1>
+            <p class="text-muted">Documenting my latest tech discoveries.</p>
+
+            <div class="social my-4">
+
+
+                <a target="_blank" href="http://github.com/emamex98" rel="me">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a target="_blank" href="http://linkedin.com/in/emamex98" rel="me">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+
+
+                <a target="_blank" href="mailto:em@nuel.xyz">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a target="_blank"
+                    href="http://drive.google.com/file/d/1mkwEbX4cWe1vnUfYgQoMJv6v8ktR7Mw4/view?usp=sharing">
+                    <i class="fas fa-file"></i>
+                </a>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="main-content">
+
+
+
+        <section id="skills">
+            <h6>
+                <a href="/blog/">
+                    < Return </a>
+            </h6>
+            <h2 class="heading">Dependency Injection in JS</h2>
+            <p>
+                Dependency injection is a software design pattern in which an object or function receives its
+                dependencies from outside itself. These dependencies might include other objects
+                or services that it needs in order to function. This approach helps us decouple the object
+                or function from its dependencies, making it more flexible and reusable.
+            </p>
+            <p>
+                In JavaScript, dependency injection can be implemented in a number of ways.
+                Let's look at two of the most common approaches to do so.
+            </p>
+            <br />
+
+            <h5>Constructor Injection</h5>
+            <p>
+                One common approach is to use constructor injection. In this approach, the dependencies are passed to
+                the constructor of the object or function that needs them.
+            </p>
+
+            <pre>
+                <code class=""language-javascript">
+class MyClass {
+    constructor(database) {
+        this.database = database;
+    }
+
+    getUserData(id) {
+        return this.database.getUser(id);
+    }
+}
+                </code>
+            </pre>
+
+            <p>
+                In the example above, the <code>MyClass</code> class depends on a <code>Database</code> object. The
+                <code>Database</code>
+                object is therefore passed to the <code>MyClass</code> constructor, so that <code>MyClass</code> can use
+                it to get the user's data.
+            </p>
+            <br />
+            <h5>Injection through a Factory</h5>
+            <p>
+
+                Another common approach to dependency injection in JavaScript is to use factory functions.
+                Factory functions are functions that help us create instances of objects. They can be used to create
+                objects that depend on other objects. For example:
+            </p>
+
+            <pre>
+                <code class=""language-javascript">
+function createMyClass(database) {
+    return new MyClass(database);
+}
+                </code>
+            </pre>
+
+            <p>
+                In this example, the <code>createMyClass</code> function creates a new <code>MyClass</code> object. The
+                <code>database</code> argument is passed to the <code>MyClass</code>
+                constructor, so that <code>MyClass</code> can use it to get user data.
+            </p>
+            <br />
+            <h5>What are the benefits anyway?</h5>
+            <p>
+                Dependency injection can be a powerful tool for making code more flexible and reusable. By decoupling
+                objects and
+                functions from their dependencies, dependency injection makes it easier to change or replace
+                dependencies without
+                affecting the rest of the code.
+            </p>
+            <ul>
+                <li><b>Increased testability:</b> Dependency injection makes it easier to test code in isolation. This
+                    is
+                    because dependencies can be mocked or stubbed out in unit tests, which allows you to test the code
+                    without
+                    having to worry about the actual implementation of the dependencies.</li>
+                <li><b>Increased flexibility:</b> Dependency injection makes it easier to change or replace
+                    dependencies. This
+                    is because
+                    the code that depends on the dependency does not need to know anything about the implementation of
+                    the
+                    dependency.</li>
+                <li><b>Increased maintainability:</b> Dependency injection makes code easier to maintain because it
+                    makes it
+                    easier to
+                    understand the dependencies of a piece of code. This is because the dependencies are explicitly
+                    passed to the
+                    code, rather than being implicitly created by the code.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <div style="z-index: 4; position: relative;">
+
+
+    </div>
+
+    <script src="http://blog.uicard.io/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<script>hljs.highlightAll();</script>
+
+</html>
